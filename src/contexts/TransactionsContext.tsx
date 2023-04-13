@@ -21,6 +21,7 @@ interface TransactionsContextType {
     transactions: Transaction[];
     fetchTransactions: (query?: string) => Promise<void>;
     createTransactions: (data: CreateTransactionInput) => Promise<void>;
+    deleteTransaction: (id: number) => Promise<void>;
 }
 
 interface TransactionsProviderProps {
@@ -58,6 +59,11 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
         setTransactions((state) => [...state, response.data]);
     }
 
+    async function deleteTransaction(id: number) {
+        await api.delete(`/transactions/${id}`);
+        fetchTransactions();
+    }
+
     // executando a requisicao somente uma vez usando o hook useEffect
     useEffect(() => {
         fetchTransactions();
@@ -69,6 +75,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
                 transactions,
                 fetchTransactions,
                 createTransactions,
+                deleteTransaction,
             }}
         >
             {children}
