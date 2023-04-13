@@ -11,10 +11,26 @@
         {
             "id": 2,
             "description": "Hamburger",
-            "type": "income",
-            "category": "Venda",
+            "type": "outcome",
+            "category": "Alimentação",
             "price": 25,
             "createdAt": "2023-04-12T16:11:47.040Z"
+        },
+        {
+            "id": 3,
+            "description": "Ignite Rocketseat",
+            "type": "outcome",
+            "category": "Estudos",
+            "price": 1980,
+            "createdAt": "2023-04-09T16:11:47.040Z"
+        },
+        {
+            "id": 4,
+            "description": "Pagamento salário",
+            "type": "income",
+            "category": "Trabalho",
+            "price": 3900,
+            "createdAt": "2023-04-01T16:11:47.040Z"
         }
     ]
 }

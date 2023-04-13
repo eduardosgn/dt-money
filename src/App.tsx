@@ -3,12 +3,16 @@ import { defaultTheme } from "./styles/themes/default";
 import { GLobalStyle } from "./styles/global";
 
 import Transactions from "./pages/Transactions";
+import { TransactionsProvider } from "./contexts/TransactionsContext";
 
 export function App() {
     return (
         <ThemeProvider theme={defaultTheme}>
             <GLobalStyle />
-            <Transactions />
+
+            <TransactionsProvider>
+                <Transactions />
+            </TransactionsProvider>
         </ThemeProvider>
     );
 };
