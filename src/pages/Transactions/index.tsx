@@ -3,6 +3,7 @@ import { TransactionsContext } from "../../contexts/TransactionsContext";
 import Header from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { SearchForm } from "./components/SearchForm";
+import * as Tooltip from "@radix-ui/react-tooltip";
 import {
     DeleteButton,
     NoTransactionMessage,
@@ -62,13 +63,36 @@ function Transactions() {
                                                 )}
                                             </td>
                                             <td>
-                                                <DeleteButton
-                                                    onClick={() =>
-                                                        deleteTransaction(id)
-                                                    }
+                                                <Tooltip.Provider
+                                                    delayDuration={200}
                                                 >
-                                                    <Trash size={20} />
-                                                </DeleteButton>
+                                                    <Tooltip.Root>
+                                                        <Tooltip.Trigger
+                                                            asChild
+                                                        >
+                                                            <DeleteButton
+                                                                onClick={() =>
+                                                                    deleteTransaction(
+                                                                        id
+                                                                    )
+                                                                }
+                                                            >
+                                                                <Trash
+                                                                    size={20}
+                                                                />
+                                                            </DeleteButton>
+                                                        </Tooltip.Trigger>
+                                                        <Tooltip.Portal>
+                                                            <Tooltip.Content
+                                                                sideOffset={5}
+                                                            >
+                                                                Deletar
+                                                                transação
+                                                                <Tooltip.Arrow />
+                                                            </Tooltip.Content>
+                                                        </Tooltip.Portal>
+                                                    </Tooltip.Root>
+                                                </Tooltip.Provider>
                                             </td>
                                         </tr>
                                     );
