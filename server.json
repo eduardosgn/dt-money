@@ -1,28 +1,28 @@
 {
   "transactions": [
     {
-      "description": "Salário mês abril",
-      "category": "Trabalho",
+      "description": "Salário",
+      "category": "Emprego",
+      "price": 3800,
+      "type": "income",
+      "createdAt": "2023-04-19T18:43:01.729Z",
+      "id": 3
+    },
+    {
+      "description": "Bike",
+      "category": "Transporte",
+      "price": 900,
+      "type": "outcome",
+      "createdAt": "2023-04-19T18:43:58.092Z",
+      "id": 4
+    },
+    {
+      "description": "Salário Março",
+      "category": "Emprego",
       "price": 3900,
       "type": "income",
-      "createdAt": "2023-04-13T18:54:15.251Z",
-      "id": 1
-    },
-    {
-      "description": "Compra bike",
-      "category": "Transporte",
-      "price": 800,
-      "type": "outcome",
-      "createdAt": "2023-04-13T18:54:27.517Z",
-      "id": 2
-    },
-    {
-      "description": "Pagamento freela",
-      "category": "Freelance",
-      "price": 1500,
-      "type": "income",
-      "createdAt": "2023-04-13T18:54:40.478Z",
-      "id": 3
+      "createdAt": "2023-04-19T21:55:36.125Z",
+      "id": 5
     }
   ]
 }

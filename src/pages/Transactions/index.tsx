@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContextSelector } from "use-context-selector";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
 import Header from "../../components/Header";
 import { Summary } from "../../components/Summary";
@@ -15,7 +15,16 @@ import { dateFormatter, priceFormatter } from "../../utils/formatter";
 import { Trash } from "phosphor-react";
 
 function Transactions() {
-    const { transactions, deleteTransaction } = useContext(TransactionsContext);
+    const transactions = useContextSelector(TransactionsContext, (context) => {
+        return context.transactions;
+    });
+
+    const deleteTransaction = useContextSelector(
+        TransactionsContext,
+        (context) => {
+            return context.deleteTransaction;
+        }
+    );
 
     return (
         <header>
